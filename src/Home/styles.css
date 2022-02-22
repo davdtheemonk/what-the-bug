@@ -1,0 +1,100 @@
+.nav{
+    height: 500px;
+    background: rgb(204, 123, 123);
+    padding: 20px;
+    align-items: center;    
+    
+}
+.featured-header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+ul{
+    font-family: "monospace",Roboto,Arial,sans-serif;
+    color: rgb(67, 66, 66);
+    font-weight: 500;
+}
+.featured-head{
+    font-family: "monospace",Roboto,Arial,sans-serif;
+    color: rgb(67, 66, 66);
+    font-weight: 500;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.hr{
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background: #000;
+    opacity: 0.2;
+}
+a{
+    text-decoration:none;
+    color: rgb(67, 66, 66);
+    font-weight: 500;
+
+}
+a:hover{
+    color: black;
+}
+.twitter{
+    margin-right: 20px;
+}
+@media screen and (max-width: 768px) {
+
+    .line,.career-data {display: none;}
+    .start-btn{ margin-right: 0px;
+    }
+    #content-mobile {display: block;}
+    
+    }
+.list-one{
+    
+    display: flex;
+    font-size: 14px;
+    line-height: normal;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-content: space-around;
+    padding-top: 350px;
+    
+  
+}
+.all{
+    margin: 0;
+}
+.main-icon{
+    
+    margin-right: auto;
+}
+.start-btn{
+    margin-right: 20px;
+    border-radius: 10px;
+    opacity: 9;
+    background-color: rgb(204, 123, 123) ;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    border-style: none;
+    border-color: white;
+    height: 40px;
+    width: 130px;
+    cursor:grab;
+    align-items: center;
+    color: black;
+  
+    
+}
+.start-btn:hover{
+    box-shadow: rgba(0, 0, 0, .14);
+}
+.list-zero{
+    
+    display: flex;
+    align-items: center;
+    height: 65px;
+
+    
+}

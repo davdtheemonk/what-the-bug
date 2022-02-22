@@ -1,0 +1,41 @@
+.featured-stories{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+ 
+
+
+}
+.container{
+    margin-left: 50px;
+    margin: 0;
+    width: 60%;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.NewsLetter{
+    border: 6;
+    width: 50%;
+    height: 250px;
+}
+.story-cont1{
+    width: 500px;
+    height: 00px;
+}
+.story-pic{
+    width: 300px;
+    height: 215px;
+}
+.story-heading{
+    font-family: "monospace",Roboto,Arial,sans-serif;
+
+}
+@media screen and (max-width: 768px) {
+
+
+
+    .container{ flex-direction: column;
+    width: 50%;}
+}
