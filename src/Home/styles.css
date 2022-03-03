@@ -1,6 +1,6 @@
 .nav{
     height: 500px;
-    background: rgb(204, 123, 123);
+    background: rgb(207, 228, 228);
     padding: 20px;
     align-items: center;    
     
@@ -19,6 +19,9 @@ ul{
     font-family: "monospace",Roboto,Arial,sans-serif;
     color: rgb(67, 66, 66);
     font-weight: 500;
+}
+.career-data{
+    color: #000;
 }
 .body{
     display: flex;
@@ -39,7 +42,7 @@ a{
 
 }
 a:hover{
-    color: black;
+    color: rgb(200, 120, 120);
 }
 .twitter{
     margin-right: 20px;
@@ -49,9 +52,18 @@ a:hover{
     .line,.career-data {display: none;}
     .start-btn{ margin-right: 0px;
     }
-    #content-mobile {display: block;}
+    
     
     }
+.home-image{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-top: 30px;
+
+}
 .list-one{
     
     display: flex;
@@ -60,7 +72,7 @@ a:hover{
     flex-direction: row;
     margin-bottom: 10px;
     align-content: space-around;
-    padding-top: 350px;
+    padding-top: 150px;
     
   
 }
@@ -75,20 +87,45 @@ a:hover{
     margin-right: 20px;
     border-radius: 10px;
     opacity: 9;
-    background-color: rgb(204, 123, 123) ;
+    background-color:  rgb(207, 228, 228);
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
     border-style: none;
     border-color: white;
     height: 40px;
     width: 130px;
-    cursor:grab;
+    cursor:pointer;
     align-items: center;
     color: black;
   
     
 }
-.start-btn:hover{
-    box-shadow: rgba(0, 0, 0, .14);
+.avatar-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.auth-intro{
+    margin-top: 20px;
+    font-family:Verdana;
+   
+    text-align: center;
+}
+.auth-intro2{
+    font-family:Verdana;
+   
+    text-align: center;
+}
+.img-avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    
+
+}
+button:hover{
+    box-shadow:rgba(226, 220, 215, 0.14);
 }
 .list-zero{
     
@@ -97,4 +134,8 @@ a:hover{
     height: 65px;
 
     
+}
+.home-img{
+    width: 300px;
+    height: 215px;
 }

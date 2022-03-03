@@ -1,0 +1,15 @@
+.container-social{
+    display: flex;
+    flex-grow: 1;
+}
+.socials{
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+}
+.git-img{
+    width: 80px;
+}
