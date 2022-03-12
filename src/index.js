@@ -5,12 +5,18 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from "./Home"
 import Template from "./Template"
-
+import Talkpython from './Talkpython'
+import Docs from "./Docs"
+import PythonMore from "./PythonMore"
 ReactDOM.render(
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<Home />}/>
     <Route path='/post' element={<Template />}/>
+   <Route path='/community' element={<Talkpython></Talkpython>}/>
+    <Route path='/documentation' element={<Docs />}/>
+    <Route path='/python-info' element={<PythonMore />}/>
+
       </Routes>
   </BrowserRouter>
 ,document.getElementById('root')

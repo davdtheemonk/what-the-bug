@@ -1,0 +1,174 @@
+
+.temp_ul{
+    display:flex;
+    flex-direction:row;
+    margin-left: auto;
+    margin-top: 18px;
+    margin-right: 13px;
+    font-size: 13px;
+}
+.talk-nav{
+    top: 0; left: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    color: white;
+    box-shadow: rgb(236, 233, 233) 1px 2px 0px 0px;
+    
+ 
+
+}
+.talk-info{
+    color:white;
+    font-weight: bold;
+    font-size:40px;
+    font-family: monospace;
+}
+.talk-info1{
+    color:white;
+    font-size:30px;
+}
+.home-info{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-top: 150px;
+    flex-direction: column;
+    text-align: center;
+
+}
+.qa-cont{
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color:#212121;
+}
+
+.link{
+    
+    color: black;
+}
+.talk-modules{
+    height: 568px;
+    background-color:gainsboro;
+    
+   
+}
+.container-modules{
+    margin-left: 50px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    line-height: 25px;
+    margin: auto;
+
+}
+.latest-updates{
+    height: auto;
+    
+
+}
+.talk-btn{
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    color:white;
+    border: 1px solid white;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  
+}
+.talk-module{
+    height: 620px;
+    background: url("../../public/assets/group.jpg") no-repeat;
+    padding: 20px;
+    align-items: center; 
+    display: flex;
+    
+}
+.talk-where{
+    font-size: 12px;
+     margin-top: 17px;
+    margin-left: -30px;
+    color:white;
+  
+}
+.talk-menu{ 
+    margin-left: auto;
+    margin-right: 13px;
+    margin-top:13px;
+    cursor: pointer;
+
+}
+
+@media screen and (min-width: 768px){
+
+    .talk-menu{ 
+        display:none;
+        
+    }
+}
+@media screen and (max-width: 768px){
+    .talk-info{
+    margin-left: auto;
+    font-size:30px
+    }
+    .talk-info1{
+        font-size:18px;
+        margin-top: 40px;
+    }
+    .container-modules{ flex-direction: column;
+        width: 50%;
+    margin: auto;
+}
+    .talk-modules{
+        height: auto;
+        
+
+    }
+
+    .temp_ul{
+        display:none;
+    }
+    .talk-module{
+        height: 500px;
+        background-size: 900px;
+    }
+    .talk-btn{
+        width: 400px;
+       
+
+    }
+    .latest-updates{
+        height: auto;
+
+    }
+    .home-info{
+        margin-top: 80px;
+    }
+    .latest-stories{
+        margin-top: 50px;
+    }
+
+}
+.talk-icon{
+    margin-top: 5px;
+    width: 40px;
+
+}

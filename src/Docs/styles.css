@@ -1,0 +1,14 @@
+.docs-menu{
+    margin-right: auto;
+    width: 200px;
+    top:100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: gray;
+       
+     
+
+}

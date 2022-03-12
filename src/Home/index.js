@@ -16,7 +16,85 @@ import Cards from "../Cards"
 import NewsLetter from "../NewsLetter"
 import Latest from "../Latest"
 import Footer from "../Footer";
+import Alert from "react"
+import {useState,useEffect} from "react"
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Skeleton from '@mui/material/Skeleton';
+import {Link} from "react-router-dom"
+
 import Socials from "../Socials"
+import Data from "../Data"
+
+const skele = [
+  {
+    src: 'https://i.ytimg.com/vi/pLqipJNItIo/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBkklsyaw9FxDmMKapyBYCn9tbPNQ',
+    title: 'Don Diablo @ Tomorrowland Main Stage 2019 | Official…',
+    channel: 'Don Diablo',
+    views: '396 k views',
+    createdAt: 'a week ago',
+  },
+  {
+    src: 'https://i.ytimg.com/vi/_Uu12zY01ts/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCpX6Jan2rxrCAZxJYDXppTP4MoQA',
+    title: 'Queen - Greatest Hits',
+    channel: 'Queen Official',
+    views: '40 M views',
+    createdAt: '3 years ago',
+  },
+  {
+    src: 'https://i.ytimg.com/vi/kkLk2XWMBf8/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLB4GZTFu1Ju2EPPPXnhMZtFVvYBaw',
+    title: 'Calvin Harris, Sam Smith - Promises (Official Video)',
+    channel: 'Calvin Harris',
+    views: '130 M views',
+    createdAt: '10 months ago',
+  },
+];
+
+function Media(props) {
+  const { loading = false } = props;
+
+  return (
+    <div className="skeleton-cont">
+     {(loading ? Array.from(new Array(3)) : skele).map((item, index) => (
+        <Box key={index} sx={{ width: 290, marginRight: 15, my: 5 }}>
+          {item ? (
+            <img
+              style={{ width: 290, height: 118 }}
+              alt={item.title}
+              src={item.src}
+            />
+          ) : (
+            <Skeleton variant="rectangular" width={290} height={158} />
+          )}
+
+          {item ? (
+            <Box sx={{ pr: 2 }}>
+              <Typography gutterBottom variant="body2">
+                {item.title}
+              </Typography>
+              <Typography display="block" variant="caption" color="text.secondary">
+                {item.channel}
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                {`${item.views} • ${item.createdAt}`}
+              </Typography>
+            </Box>
+          ) : (
+            <Box sx={{ pt: 0.5 }}>
+              <Skeleton />
+              <Skeleton width="60%" />
+            </Box>
+          )}
+        </Box>
+      ))}
+      </div>
+  
+  );
+}
+
+Media.propTypes = {
+  loading: PropTypes.bool,
+};
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -58,7 +136,46 @@ BootstrapDialogTitle.propTypes = {
 
 
 
+
 export default function Home(){
+  const [minimumTime, setMinimumTime] = useState(1500);
+  const [minimumTimeElapsed, setMinimumTimeElapsed] = useState(true);
+  const [loader, setLoader] = useState(false);
+  const [data,setData] = useState([]);
+  const [loading, setLoading]= useState(false);
+  const [error, setError] = useState("");
+  function timeout(delay: number) {
+    return new Promise( res => setTimeout(res, delay) );
+}
+useEffect(() => {
+    const fetchUsers = async () => {
+      setLoading(true);
+      try {
+        //const url = "https://wtb-v1.herokuapp.com/posts/" //API endpoint for collecting blogs
+        const url=" ";
+        const res = await fetch(url);
+        await timeout(5000)
+        const blogs = await res.json();
+        setData(blogs);
+      } catch (err) {
+        setError(err.message);
+      }
+      setLoading(false);
+    };
+    
+    fetchUsers()
+  }, []);
+  console.log(data)
+  const blogs = data.map(item=>(
+   
+    <Cards className="cards"
+    key={item.pk} item={item}/>
+    
+  ) )
+
+
+
+
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -70,6 +187,7 @@ export default function Home(){
   
     return(
         <div >
+          
               <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -112,7 +230,11 @@ export default function Home(){
                 <ul><a href="https://github.com/davdtheemonk">PROJECTS</a></ul>
       
                 <ul><a href="https://www.upwork.com/freelancers/~014e87618220a92fdb" target="_blank">FREELANCING</a></ul>
-                <ul><a href="">TALK PYTHON</a></ul>
+                <ul><Link
+              className="navbar-item"
+              to="/community">
+              TALK PYTHON
+            </Link></ul>
                 <ul className='line'>|</ul>
                 <ul className='career-data'>SOFTWARE ENGINEER / DATA SCIENTIST / CS Student</ul>
              
@@ -128,8 +250,16 @@ export default function Home(){
         <div className='body'>
      
        </div>
-    
-    <Cards />
+       <div className="cards-cont"> 
+
+      { data=="" ?   <Box sx={{ overflow: 'hidden' }}>
+      <Media loading />
+  
+    </Box> : !minimumTimeElapsed || loader ? <Box sx={{ overflow: 'hidden' }}>
+      <Media loading />   </Box>  : blogs}
+    </div>
+   
+
     <NewsLetter/>
     <Latest/>
     <Socials/>

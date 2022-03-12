@@ -12,7 +12,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import { ConstructionOutlined, GitHub, HeartBroken, MonitorHeart } from "@mui/icons-material";
 import LinkedIn from "@mui/icons-material/LinkedIn";
-
+import {Link } from "react-router-dom"
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -106,7 +106,7 @@ export default function Footer(){
               
             <p className="footer-qoute">"Before Developer am Human first"</p>
             <ul><a href="">About what-the-bug</a></ul>
-            <ul><a href="">API Docs</a></ul>
+            <ul><Link to="/documentation">API Docs</Link></ul>
             <ul><p className="footer-auth" onClick={handleClickOpen}>About Author</p></ul>
             <ul><a href="">Terms and Privacy</a></ul>
             
