@@ -150,19 +150,18 @@ Three modules
 
   <h3>What you will learn</h3>
   <li>
-  <ul>
   Python Basics
-</ul>
-<ul>
-Working with Data
-</ul>
-<ul>
-Working with Machine Learning models
-</ul>
-<ul>
-Become an experienced Python Programmer
-</ul>>
 </li>
+<li>
+Working with Data
+</li>
+<li>
+Working with Machine Learning models
+</li>
+<li>
+Become an experienced Python Programmer
+</li>
+
 
   
 </div>
