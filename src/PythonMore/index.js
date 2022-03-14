@@ -147,19 +147,22 @@ Three modules
 <i><b>Description</b></i>
 <br></br>
 <div className="box-features">
+
   <h3>What you will learn</h3>
-  <Button variant="text" startIcon={<FontAwesomeIcon icon={faCircleDot} />}>
+  <li>
+  <ul>
   Python Basics
-</Button>
-<Button variant="text" startIcon={<FontAwesomeIcon icon={faCircleDot} />}>
+</ul>
+<ul>
 Working with Data
-</Button>
-<Button variant="text" startIcon={<FontAwesomeIcon icon={faCircleDot}/>}>
+</ul>
+<ul>
 Working with Machine Learning models
-</Button>
-<Button variant="text" fontSize="small" startIcon={<FontAwesomeIcon icon={faCircleDot}/>}>
+</ul>
+<ul>
 Become an experienced Python Programmer
-</Button>
+</ul>>
+<li>
 
   
 </div>
