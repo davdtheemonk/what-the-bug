@@ -162,7 +162,7 @@ Working with Machine Learning models
 <ul>
 Become an experienced Python Programmer
 </ul>>
-<li>
+</li>
 
   
 </div>
