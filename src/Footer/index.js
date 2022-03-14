@@ -84,12 +84,12 @@ export default function Footer(){
           <Typography gutterBottom>
           <Typography gutterBottom>
 
-            <p className="auth-role">Software Developer</p>
             
           </Typography>
           <Typography gutterBottom>
               <div className="auth-tool">
                   <ConstructionOutlined></ConstructionOutlined>
+                   <p className="auth-role">Software Developer</p>
            
            </div>
            <div className="socials">
