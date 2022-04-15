@@ -72,7 +72,7 @@ export default function Steppy() {
         <FormControlLabel value="2" control={<Radio />} label="Data Science fundamentals with Python" />
         <FormControlLabel value="3" control={<Radio />} label="Machine Learning fundamentals with Python" />
       </RadioGroup>
-    </FormControl>:" "}{index === 1?<Link style={{color:"blue"}}to="">Sign up or login</Link>:" "}</Typography>
+    </FormControl>:" "}{index === 1?<Link style={{color:"blue"}}to="/portal">Sign up or login</Link>:" "}</Typography>
               <Box sx={{ mb: 2 }}>
                 <div>
                   <Button

@@ -236,7 +236,7 @@ useEffect(() => {
               TALK PYTHON
             </Link></ul>
                 <ul className='line'>|</ul>
-                <ul className='career-data'>TECH BUGS YOU CANT CHEW</ul>
+                <ul className='career-data'>TECH BUGS YOU CAN'T CHEW </ul>
              
             </li>
          

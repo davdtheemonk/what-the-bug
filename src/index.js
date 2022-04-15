@@ -7,8 +7,18 @@ import Home from "./Home"
 import Template from "./Template"
 import Talkpython from './Talkpython'
 import Docs from "./Docs"
+import Dashboard  from './Dashboard';
+import Signup from "./Signup"
+import Login from "./Login"
 import PythonMore from "./PythonMore"
+import { store } from './app/store';
+import { Provider } from 'react-redux';
+
+
+
+
 ReactDOM.render(
+  <Provider store={store}>
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<Home />}/>
@@ -16,9 +26,12 @@ ReactDOM.render(
    <Route path='/community' element={<Talkpython></Talkpython>}/>
     <Route path='/documentation' element={<Docs />}/>
     <Route path='/python-info' element={<PythonMore />}/>
-
+    <Route path='/portal' element={<Dashboard />}/>
+    <Route path='/login' element={<Login />}/>
+    <Route path='/sign-up' element={<Signup/>} />
       </Routes>
   </BrowserRouter>
+  </Provider>
 ,document.getElementById('root')
 );
 

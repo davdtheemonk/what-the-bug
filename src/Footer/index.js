@@ -78,19 +78,19 @@ export default function Footer(){
           </Typography>
           <Typography gutterBottom>
               <div className="auth-name">
-            David Mugalla Chivatsi
+            David Mugalla
             </div>
           </Typography>
           <Typography gutterBottom>
           <Typography gutterBottom>
 
+            <p className="auth-role">Software Engineer / Data Scientist / CS student</p>
             
           </Typography>
           <Typography gutterBottom>
               <div className="auth-tool">
                   <ConstructionOutlined></ConstructionOutlined>
-                   <p className="auth-role">Software Developer</p>
-           
+           Made with React.Js
            </div>
            <div className="socials">
 

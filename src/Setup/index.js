@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import Stepper from "../Stepper"
-import { styled } from '@mui/material/styles';
+
 
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
