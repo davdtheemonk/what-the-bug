@@ -1,0 +1,37 @@
+.community__names_cont{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    height:100vh; 
+    margin-top: 10px;
+
+
+  
+
+}
+.community__names{
+    color:rgb(73, 73, 73);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom:5px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 25px;
+    font-weight: bold;
+    
+    background-color: white;
+
+}
+.community__desc_cont{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    flex:1;
+
+}
+.community__dets{
+    margin-left: 10px;
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+}

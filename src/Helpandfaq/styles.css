@@ -1,0 +1,14 @@
+.help__cont{
+    display: flex;
+    background-color: black;
+    border-top: 0.4px solid grey;
+}
+.help_and_faq{
+    display:flex;
+    margin-left:auto ;
+    justify-content: right;
+    margin-right: 20px;
+    color:white;
+    flex-direction: row;
+
+}

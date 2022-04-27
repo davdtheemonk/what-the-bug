@@ -1,0 +1,38 @@
+.start__cont_over{
+    display:flex;
+    margin-bottom: 50px;
+
+  
+}
+
+.start_cont_btns{
+    display:flex;
+
+   
+    width: 350px;
+    background-color: black;
+    justify-content: space-around;
+     
+    flex-direction:row;
+}
+.start_cont_startbtn{
+    background:linear-gradient(rgb(14, 65, 143),rgb(252, 252, 252));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid -webkit-linear-gradient(rgb(40, 70, 151),rgb(192, 187, 187));
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    color:white;
+    margin-top: 20px;
+    border-radius: 30px;
+    touch-action: manipulation;
+
+}

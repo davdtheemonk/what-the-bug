@@ -12,7 +12,17 @@ import {selectUser,login,logout} from "../features/userSlice"
 export default function Dashboard(){
     const dispatch = useDispatch()
     const user = useSelector(selectUser)
- 
+ /*
+    {user?<div className="dash_container">
+        
+    <Sidebar/>
+    <Content/>
+    
+
+
+
+</div>:<Login/>}
+</>*/
 
     useEffect(() => {
         auth.onAuthStateChanged((authUser)=>{
@@ -33,16 +43,17 @@ export default function Dashboard(){
 
     return(
         <>
-   {user?<div className="dash_container">
+ 
+    {user?<div className="dash_container">
         
-        <Sidebar/>
-        <Content/>
-        
+    <Sidebar/>
+    <Content/>
+    
 
 
 
-    </div>:<Login/>}
-    </>
+</div>:<Login/>}
+</>
 
 )
 }

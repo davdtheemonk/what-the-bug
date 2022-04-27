@@ -40,6 +40,8 @@ const provider = new GoogleAuthProvider();
           email: user.email,
         });
       }
+      //remember to change this on production
+   
     } catch (err) {
       console.error(err);
       alert(err.message);
@@ -47,12 +49,14 @@ const provider = new GoogleAuthProvider();
   };
   const logInWithEmailAndPassword = async (email, password) => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+     await signInWithEmailAndPassword(auth, email, password);
+    //remember to change this on production
 
     } catch (err) {
       console.error(err);
       alert(err.message);
     }
+    
   };
   const registerWithEmailAndPassword = async (name, email, password) => {
     try {
@@ -64,6 +68,8 @@ const provider = new GoogleAuthProvider();
         authProvider: "local",
         email,
       });
+      //remember to change this on production
+
     } catch (err) {
       console.error(err);
       alert(err.message);

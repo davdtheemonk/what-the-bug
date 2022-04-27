@@ -1,0 +1,71 @@
+.hiremore_cont{
+    display: flex;
+    flex-direction:column;
+    height:auto;
+    flex:1;
+    background-color:black;
+}
+.hiremore_course_cont{
+    display: flex;
+    flex-direction:column;
+    margin-right: auto;
+    margin-left: 113px;
+}
+.hiremore_course_cont>h4{
+    background:-webkit-linear-gradient(rgb(40, 70, 151),rgb(192, 187, 187));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:44px;
+    font-weight: 200;
+}
+.course_bar_pic{
+    width: 200px;
+    height: 200px
+
+}
+.hire_bar_info{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:0px;
+    
+
+}
+.hire-more-info{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    color:white
+}
+
+.desc_text{
+    color:white;
+}
+@media screen and (max-width: 768px){
+    .hiremore_course_cont{
+        margin-left: 48px;
+        margin-top: 55px;
+
+    }
+    .hiremore_course_cont>h4{
+        font-size: 33px;
+    }
+    .hire_bar_info{
+        flex-direction:column;
+    }
+    
+}
+.hire_desc_txt{
+    color:white;
+}
+.sidebar_add{
+    color:white;
+}
+.hiremore_desc{
+    color: white;
+    font-size:33px; 
+}
+.hiremore_desc_p1{
+    color:white;
+    letter-spacing:3px;
+}

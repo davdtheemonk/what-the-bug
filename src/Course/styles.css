@@ -1,0 +1,92 @@
+.course-info-module{
+    height: 480px;
+    background: url("../../public/assets/code-r.jpg") no-repeat;
+    
+    padding: 20px;
+   
+    align-items: center; 
+    display: flex;
+    box-shadow: black -24px -100px 108px 0px inset;
+
+    
+  
+}
+@media screen and (max-width: 768px){
+    .course-info-module{
+        height: 600px;
+        margin:auto;
+        background-size: 900px;
+
+    }
+}
+.course-home-info{
+        margin-top: auto;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        margin-right: auto;
+        margin-top: 150px;
+        flex-direction: column;
+        text-align: left;
+        box-shadow: rgb(204,219,232) -24px -24px 48px 8px inset;
+        background:transparent;
+     
+    
+   
+}
+.course-bottom-color{
+    width: 100%;
+    height:46px;
+    display:none;
+    margin-top:50px;
+
+    background-color: rosybrown;
+
+}
+.course-description{
+    color:white;
+}
+.course-time-lapse{
+    margin-top: -10px;
+   
+    
+}
+.course_date_published{
+    margin-left: 10px;
+}
+.course_available{
+    margin-left:10px;
+}
+.course_bar_info{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:0px;
+    
+
+}
+.course-more-info{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    color:white
+}
+.course-dash{
+    background-color:rgb(44, 44, 245);
+    width:46px;
+    height:12px;
+}
+.course-name-info{
+    color:white;
+    font-weight: bold;
+    font-size:25px;
+    font-family: monospace;
+
+}
+.course-tutor-info{
+    color:white;
+    font-weight: bold;
+    margin-top: -20px;
+    font-size:20px;
+
+}

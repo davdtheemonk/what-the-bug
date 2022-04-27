@@ -17,11 +17,16 @@
     padding: 20px;
     line-height: 25px;
     margin: auto;
+    
 
 }
 .cards-cont{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction:row;
+    
+ 
 }
 .skeleton-cont{
     display: flex;

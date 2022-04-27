@@ -1,0 +1,42 @@
+.interact__cont_over{
+    display:flex;
+    height:auto;
+    background-color: black;
+    overflow: hidden;
+    flex:1;
+    margin-top: 70px;
+
+}
+@media screen and (max-width: 768px){
+    .interact__cont_over{
+        margin-top: 100px;
+
+    }
+    
+}
+.interact_cont{
+
+    display:flex;
+    flex-direction:row;
+    width:80%;
+    justify-content: space-between;
+    
+  
+}
+
+.interact_text{
+    color:white;
+    width:400px;
+    letter-spacing: 3px;
+    
+}
+
+.interact_text>h3{
+    font-size: 25px;
+    
+}
+.interact_img{
+    width: 400px;
+    height:400px;
+    margin-left: auto;
+}

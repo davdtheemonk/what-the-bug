@@ -1,0 +1,50 @@
+.banner-cont{
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    background-color: grey;
+  
+
+}   
+
+.banner-donate{
+    color:white;
+   
+
+}
+@media screen and (max-width: 768px){
+    .banner-mission{
+        font-size: 15px !important;
+
+    }
+    .banner-text{
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        line-height: 20px !important;
+    }
+    .banner-hire{
+        margin-bottom:10px;
+    }
+
+}
+.banner-mission{
+    font-size: 25px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+.banner-hire{
+  color:white;
+}
+.banner-or{
+    color:black;
+}
+.banner-text{
+    margin: auto;
+    display: flex;
+    flex-direction:row;
+    line-height: 45px;
+    
+
+}

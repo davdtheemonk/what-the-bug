@@ -21,8 +21,9 @@ import {useState,useEffect} from "react"
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Skeleton from '@mui/material/Skeleton';
+import axios from "axios";
 import {Link} from "react-router-dom"
-
+import {api} from "../unsplash"
 import Socials from "../Socials"
 import Data from "../Data"
 
@@ -144,35 +145,54 @@ export default function Home(){
   const [data,setData] = useState([]);
   const [loading, setLoading]= useState(false);
   const [error, setError] = useState("");
+  const [posts,setPosts] = useState([]);
+  //const [blog1,setBlog1] = useState([]);
+  const [blog1,setBlog1] = useState([]);
+  const [img, setPhotosResponse] = useState(null);
+  
+  const [blog3,setBlog3] = useState([]);
+  const displayBlogs=   posts.map(blog=>{
+    return <Cards  blog={blog} key={blog.pk}/>
+})
+
+  const handleClick = () =>{
+        
+    const url = `/blogs/${blog1.pk}`;
+    window.location = url;
+  
+
+}
+
+React.useEffect(()=>{
+  async function getBlogs(){
+  await axios.get(`https://wtb-v1.herokuapp.com/posts`)
+    .then(res=>{
+      //(res.data[-1])
+      setPosts(res.data)
+  
+
+
+
+
+
+    }).catch(err=>{
+      console.log(err)
+    })
+  }
+    getBlogs();
+ 
+  
+  
+  },[]);
+
+
+  
   function timeout(delay: number) {
     return new Promise( res => setTimeout(res, delay) );
 }
-useEffect(() => {
-    const fetchUsers = async () => {
-      setLoading(true);
-      try {
-        //const url = "https://wtb-v1.herokuapp.com/posts/" //API endpoint for collecting blogs
-        const url=" ";
-        const res = await fetch(url);
-        await timeout(5000)
-        const blogs = await res.json();
-        setData(blogs);
-      } catch (err) {
-        setError(err.message);
-      }
-      setLoading(false);
-    };
-    
-    fetchUsers()
-  }, []);
-  console.log(data)
-  const blogs = data.map(item=>(
-   
-    <Cards className="cards"
-    key={item.pk} item={item}/>
-    
-  ) )
 
+
+ 
 
 
 
@@ -252,16 +272,18 @@ useEffect(() => {
        </div>
        <div className="cards-cont"> 
 
-      { data=="" ?   <Box sx={{ overflow: 'hidden' }}>
+      { blog1==[] ?   <Box sx={{ overflow: 'hidden' }}>
       <Media loading />
   
     </Box> : !minimumTimeElapsed || loader ? <Box sx={{ overflow: 'hidden' }}>
-      <Media loading />   </Box>  : blogs}
+      <Media loading />   </Box>  : <>   
+      {displayBlogs}    
+       </>}
     </div>
    
 
     <NewsLetter/>
-    <Latest/>
+    <Latest posts={posts}/>
     <Socials/>
    <Footer/>
        </div>

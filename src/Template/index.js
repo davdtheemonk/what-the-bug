@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import GrainIcon from '@mui/icons-material/Grain';
 import EmailSharpIcon from '@mui/icons-material/EmailSharp';
 import "./style.css"
@@ -7,6 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import {useParams} from "react-router-dom";
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
@@ -15,10 +16,12 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import axios from "axios"
 import Typography from '@mui/material/Typography';
 import { ConstructionOutlined, FacebookOutlined, GitHub, HeartBroken, LocationOn, MonitorHeart, ShareRounded, Twitter } from "@mui/icons-material";
 import LinkedIn from "@mui/icons-material/LinkedIn";
 import Footer from "../Footer"
+import {api} from "../unsplash"
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -58,7 +61,16 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function Template(){
-    const [open, setOpen] = React.useState(false);
+    const [title,setTitle] = useState("")
+    const [post,setPost] = useState("");
+    const [timetoread,setTimeToRead]=useState('');
+    const [date,setDate]=useState("");
+    const [location,setLocation]=useState("");
+    const [image,setImage]=useState("");
+    const [] = useState("")
+    const [img, setPhotosResponse] = useState(null);
+    const { id } = useParams();
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
       setOpen(true);
@@ -66,6 +78,34 @@ export default function Template(){
     const handleClose = () => {
       setOpen(false);
     };
+
+
+      axios.get(`https://wtb-v1.herokuapp.com/posts/${id}`)
+      .then(res=>{
+        setDate(res.data.date);
+        setTitle(res.data.title);
+        setTimeToRead(res.data.timetoread);
+        setPost(res.data.post);
+        setLocation(res.data.location);
+        setImage(res.data.image);
+        console.log(post)
+
+
+
+
+      }).catch(err=>{
+        console.log(err)
+      })
+
+      api.photos.get({photoId:`${image.replaceAll('"', '')}`})
+      .then(result => {
+        setPhotosResponse(result.response.urls.raw);
+      })
+      .catch((err) => {
+        console.log("something went wrong!");
+      });
+
+    
     return(
 
     
@@ -116,24 +156,24 @@ export default function Template(){
 
             <div className="publisher-dets">
             <img className="profile-pic-pub" src="/assets/avatar.jpg"></img>
-            <p className="pub-date">Published on Feb 24,2022<b> <GrainIcon fontSize='small' ></GrainIcon>9 min read</b></p>
+            <p className="pub-date">{date.replaceAll('"', '') }<b> <GrainIcon fontSize='small' ></GrainIcon>{timetoread.replaceAll('"', '')}</b></p>
             
             <button className='start-btn-temp' onClick={handleClickOpen} >Get Started</button>
 </div>
 <div className="published">
 <div className="published-text">
-    <h1>How to develop a freelance career at Upwork 
+    <h1 >{title.replaceAll('"', '') }
     </h1>
     <div className="temp-share">
 
-<LocationOn fontSize="small" ></LocationOn><p className="temp-loc">Nakuru,Kenya</p>
+<LocationOn fontSize="small" ></LocationOn><p className="temp-loc">{location.replaceAll('"', '')}</p>
 </div>
 
     <div className="published-story">
-        <img src="./upwork.jpeg" className="published-pic"></img>
-     <p className="pub-story">
+        <img src={img} className="published-pic"></img>
+     <p  className="pub-story" dangerouslySetInnerHTML={{__html:post.replace(/^"(.+(?="$))"$/, '$1') }}>
+     
 
-I am pretty sure somewhere one of your child element is exceeding the width of its parent element. Check you code twice, if there any box-size of inner child elements is large because of one of the reasons like- when the box width including margin, padding, border go beyond the limit. And we possibly haven't added overflow: hidden; to its outer parent element. In this case they are considered reaching beyond their parent element and browsers show it with the scrollbar. So fix it via removing extra margins, paddings, borders or if you just don't want any headache, just try to add overflow:hidden; to the outer box.
 </p>
 <div className="temp-share">
 <p>Share..</p><Twitter></Twitter><FacebookOutlined></FacebookOutlined>
@@ -147,8 +187,18 @@ I am pretty sure somewhere one of your child element is exceeding the width of i
     <p className="publisher-role">Hello!!I am a developer and currently an undergrad taking Computer Science</p>
      <div className="temp-social">
       <EmailSharpIcon></EmailSharpIcon>
-      <LinkedInIcon></LinkedInIcon>
-      <GitHubIcon></GitHubIcon>
+      <LinkedInIcon onClick={() =>{
+        
+        const url = 'https://www.linkedin.com/in/david-mugalla-198149215/';
+        window.open(url, '_blank');
+    
+}}></LinkedInIcon>
+      <GitHubIcon onClick={() =>{
+        
+        const url = 'https://www.github.com/davdtheemonk/';
+        window.open(url, '_blank');
+    
+}}></GitHubIcon>
       
       </div>
       </div>

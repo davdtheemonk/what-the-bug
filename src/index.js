@@ -10,9 +10,11 @@ import Docs from "./Docs"
 import Dashboard  from './Dashboard';
 import Signup from "./Signup"
 import Login from "./Login"
+import Course from "./Course"
 import PythonMore from "./PythonMore"
 import { store } from './app/store';
 import { Provider } from 'react-redux';
+import Hire from "./Hire"
 
 
 
@@ -22,13 +24,15 @@ ReactDOM.render(
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<Home />}/>
-    <Route path='/post' element={<Template />}/>
    <Route path='/community' element={<Talkpython></Talkpython>}/>
     <Route path='/documentation' element={<Docs />}/>
     <Route path='/python-info' element={<PythonMore />}/>
     <Route path='/portal' element={<Dashboard />}/>
     <Route path='/login' element={<Login />}/>
     <Route path='/sign-up' element={<Signup/>} />
+    <Route path='/portal/course-info' element={<Course/>} />
+    <Route path='/hire' element={<Hire/>} />
+    <Route path='/blogs/:id'element={<Template />} />
       </Routes>
   </BrowserRouter>
   </Provider>

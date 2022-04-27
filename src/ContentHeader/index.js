@@ -10,12 +10,8 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
 export default function ContentHeader(){
-    const bar = {
-        height : '13vh',
-        width:"100%",
-        
-        
-    }
+    
+
    
     const user= useSelector(selectUser)
 
@@ -25,12 +21,12 @@ export default function ContentHeader(){
 
 
     return(
-        <div className="bar-header" style={bar}>
+        <div className="bar-header" >
         <div className="content_header">
            
             <div className ="content_headerleft">
                 <h3>
-                  Test
+                
                 </h3>
             
             </div>
@@ -38,7 +34,7 @@ export default function ContentHeader(){
             <div className="sidebar_profile">
             <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Profile Settings">
-                    <Avatar src={user.photo}/>
+                    <Avatar src={user.photo} />
 </Tooltip>
 </Box>
                     <div className="sidebar_profileicons">

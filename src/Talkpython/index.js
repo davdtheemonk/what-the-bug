@@ -26,7 +26,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import CloseIcon from '@mui/icons-material/Close';
-
+import Banner from "../Banner"
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -187,6 +187,7 @@ const styles = {
 };
     return(
         <div>
+        
             <div className="talk-nav">
                 <li className="temp-list">
                 <ul><img className="talk-icon"src="/icon-dev.png"/></ul> 
@@ -194,7 +195,7 @@ const styles = {
                  
                    <div className="temp_ul">
                     <ul><Link to="/">Blog</Link></ul>
-                    <ul><Link to="">Sign up</Link></ul>
+                    <ul><Link to="/sign-up">Sign up</Link></ul>
                     <ul><Link to="">FAQ</Link></ul>
                     </div>
                     <ul className="talk-menu"><Menuicon ></Menuicon></ul>
@@ -305,6 +306,7 @@ const styles = {
     </div>
     </div>
       </div>
+      <Banner/>
       <div className="latest-updates">
          <div className='featured-header'>
         <div className='featured'>
@@ -316,6 +318,7 @@ const styles = {
     
         </div>
         </div>
+        
         <div className="cards-cont"> 
         <Box sx={{ overflow: 'hidden' }}>
       <Media loading />
@@ -323,8 +326,11 @@ const styles = {
     </Box>
         </div>
         </div>
+        
         <Socials></Socials>
+        
         <div className="qa-cont">
+ 
          <div className='featured-header'>
         <div className='featured'>
             <h3 color="white" className='featured-head'>Frequently Asked Questions</h3>
@@ -348,6 +354,7 @@ const styles = {
            
         </DialogContent>
       </BootstrapDialog>
+   
        
         <Faq
                 data={data}

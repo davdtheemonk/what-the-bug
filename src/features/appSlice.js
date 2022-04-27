@@ -4,19 +4,19 @@ export const appSlice = createSlice({
     name:"app",
     initialState:{
         notepadId:null,
-        channelName:null,
+        notepadName:null,
     },
     reducers:{
-        setNotepadId: (state,action)=>{
+        setNotepadInfo: (state,action)=>{
             state.notepadId = action.payload.notepadId;
-            state.channelName = action.payload.notepadName;
+            state.notepadName = action.payload.notepadName;
 
         },
+        
     },
 });
 
-export const {setNotepadId} = appSlice.actions;
-export const setNotepadId = (state)=>state.app.notepadId;
+export const {setNotepadInfo} = appSlice.actions;
+export const selectNotepadId = (state)=>state.app.notepadId;
 export const selectNotepadName = (state)=> state.app.notepadName;
-
 export default appSlice.reducer;

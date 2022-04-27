@@ -1,7 +1,11 @@
 .latest-stories{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items:left;
+    flex-wrap: nowrap;
+    gap:20px;
+    overflow-x: auto;
+    justify-content: left;
     margin-left: 30px;
  
    
@@ -9,15 +13,23 @@
 
 
 }
+.story-pc{
+    width: 300px;
+    height: 215px;
+}
+.wait-cardss{
+    
+  
+}
 .container-latest{
     margin-left: 50px;
     
     margin-top: 80px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    align-items: left;
+    justify-content: left;
+    
     line-height: 25px;
     margin: auto;
 
@@ -44,6 +56,9 @@
     .container-latest{ flex-direction: column;
     width: 50%;
 margin: auto;}
+.latest-stories{
+    flex-direction:column;
+}
 }
 
 .descr{

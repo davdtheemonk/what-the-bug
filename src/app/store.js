@@ -9,9 +9,11 @@ const reducer = combineReducers({
 export const store = createStore(reducer);*/
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from '../features/userSlice';
+import communitySlice from "../features/communitySlice"
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
+    app:communitySlice
   },
 });

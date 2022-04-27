@@ -1,0 +1,29 @@
+.collab_img{
+    width: 400px;
+    height:400px;
+    margin-right: auto;
+}
+.collab_txt{
+    color:white;
+    width:400px;
+    letter-spacing: 3px;
+
+}
+.collab_txt>h3{
+    font-size: 25px;
+    
+}
+.collab_cont{
+    display:flex;
+    flex-direction:row;
+    width:80%;
+    height: auto;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+@media  screen and (max-width: 768px){
+    .collab_cont{
+        flex-direction:column;
+    }
+    
+}

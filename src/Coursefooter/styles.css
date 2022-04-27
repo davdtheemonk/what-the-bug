@@ -1,0 +1,21 @@
+.course_footer_cont{
+    background-color:black;
+    border-top: 0.4px solid grey;
+}
+.cours_footer_link{
+    color: lightgray
+}
+.course_footer_copy{
+    color: lightgray;
+    margin-left:auto;
+    margin-top:auto;
+}
+.course_footer_contacts{
+    display: flex;
+    flex-direction:column;
+    align-items: left;
+    line-height:30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content:left;
+    margin-left:-43px;
+}

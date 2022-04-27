@@ -147,21 +147,26 @@ Three modules
 <i><b>Description</b></i>
 <br></br>
 <div className="box-features">
+  <div className="box-text">
+  <div className="box-basic">
   <h3>What you will learn</h3>
-  <Button variant="text" startIcon={<FontAwesomeIcon icon={faCircleDot} />}>
-  Python Basics
-</Button>
-<Button variant="text" startIcon={<FontAwesomeIcon icon={faCircleDot} />}>
-Working with Data
-</Button>
-<Button variant="text" startIcon={<FontAwesomeIcon icon={faCircleDot}/>}>
-Working with Machine Learning models
-</Button>
-<Button variant="text" fontSize="small" startIcon={<FontAwesomeIcon icon={faCircleDot}/>}>
-Become an experienced Python Programmer
-</Button>
+  </div>
+  <div className="box-basics">
+<p>Python Basics</p>
+</div>
+<div className="box-basics">
+<p>Working with Data
+</p></div>
+<div className="box-basics">
 
-  
+<p>Working with Machine Learning models
+</p>
+</div>
+<div className="box-basics"><p>Become an experienced Python Programmer
+</p>
+</div>
+
+</div>
 </div>
 In an education approach each module has different features because each modules takes an independent approach in python.
 In terms of student approach,there tonnes of <u>resources and materials</u> for research and learning in the resource page of each module.

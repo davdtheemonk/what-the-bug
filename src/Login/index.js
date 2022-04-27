@@ -26,12 +26,12 @@ export default function Login(){
       
     }
     const ggStyle ={
-        marginBottom:20
+        marginTop:17
         
     }
     const btnStyle = {
         marginTop:20,
-        marginBottom:20
+        // marginBottom:20
     }
 
 return(
@@ -64,16 +64,9 @@ return(
       <span className="icon"></span>
       <span className="buttonText">Continue with Google</span>
     </div>
-    <div className="customBtn" onClick={signInWithGoogle}>
-      <span className="icon-github"></span>
-      <span className="buttonText">Continue with Github</span>
-    </div>
-    <div className="customBtn" onClick={signInWithGoogle}>
-      <span className="icon-apple"></span>
-      <span className="buttonText">Continue with Apple</span>
-    </div>
-        <TextField label="Email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Enter email" fullWidth required/>
-        <TextField label="Password" onChange={(e) => setPassword(e.target.value)} value={password} placeholder="Enter Password" type="password" fullWidth required/>
+  
+        <TextField style={ggStyle} label="Email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Enter email" fullWidth required/>
+        <TextField style={ggStyle} label="Password" onChange={(e) => setPassword(e.target.value)} value={password} placeholder="Enter Password" type="password" fullWidth required/>
 
         <Button style={btnStyle}  onClick={() => logInWithEmailAndPassword(email, password)} type="sumbit" variant="contained" color="primary" fullWidth>Sign in</Button>
       
@@ -85,7 +78,7 @@ return(
 
         </Typography>
         <Typography> Don't have an acount ?
-            <Link to="">Sign up</Link>
+            <Link to="/sign-up">Sign up</Link>
         </Typography>
       
         

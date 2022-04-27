@@ -1,9 +1,10 @@
 .sidebar{
     display:flex;
     flex-direction: column;
-    flex:0.25;
+    width:100px;
+    border-radius: 30px;
     height:100vh;
-    background: color #2f3135;
+    background: color black;
 
 }
 @media screen and (max-width:768px) {
@@ -12,14 +13,15 @@
     }
     
 }
+
 .sidebar__top{
     display:flex;
     justify-content: space-between;
     align-items:center;
     padding: 10px;
-    background-color:#2f3135;
+    background-color:black;
     color:white;
-    border-bottom: 3px solid #26282c;
+    border-bottom: 1px solid grey;
 
 
 }
@@ -28,7 +30,7 @@
     align-items: center;
 }
 .sidebar_content{
-    background-color:#2f3135;
+    background-color:black;
     flex:1;
 
 }
@@ -42,7 +44,7 @@
     justify-content:space-between;
     align-items: center;
     padding:10px;
-    background-color:#2f3135;
+    background-color:black;
     color:gray;
 
 }.sidebar_infoicon{
@@ -56,7 +58,7 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
-    color:rgb(85, 85, 85);
+    color:black;
     padding:10px;
     flex-direction: row;
     
@@ -73,7 +75,7 @@
     justify-content: space-between;
     align-items: center;
     color:gray;
-    background-color: #2f3135;
+    background-color: black;
     padding:10px;
     border-top: 1px solid gray;
 }

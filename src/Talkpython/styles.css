@@ -15,7 +15,7 @@
     height: 70px;
     background-color: white;
     color: white;
-    box-shadow: rgb(236, 233, 233) 1px 2px 0px 0px;
+    box-shadow: 0px 0px 2.2px 1.4px grey;
     
  
 
@@ -75,6 +75,8 @@
 .latest-updates{
     height: auto;
     
+    
+    
 
 }
 .talk-btn{
@@ -100,6 +102,7 @@
     padding: 20px;
     align-items: center; 
     display: flex;
+   
     
 }
 .talk-where{
