@@ -7,7 +7,14 @@
     margin-top:50px;
 }
 
+.login-image-cont{
+  display:flex;
+  margin-top:100px;
+  justify-content:center;
+  align-items:center;
 
+
+}
 @media screen and (max-width: 768px){
 .login-cont{
   margin:auto;
@@ -56,7 +63,11 @@
 .bg-image{
   max-width: 450px;
   margin-left:auto;
-  height:auto;
+  height:100%;
+  flex:1;
+  position: relative;
+  bottom: 0px;
+  top: 0px;
   
 
 }

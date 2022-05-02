@@ -34,7 +34,7 @@ export default function ContentHeader(){
             <div className="sidebar_profile">
             <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Profile Settings">
-                    <Avatar src={user.photo} />
+                    <Avatar />
 </Tooltip>
 </Box>
                     <div className="sidebar_profileicons">

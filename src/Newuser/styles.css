@@ -1,0 +1,233 @@
+.newuser_cont{
+    display:flex;
+    flex-direction:column;
+
+    height:calc(100vh-50px);
+    padding: 20px;
+    flex:1;
+   overflow: hidden;
+    background-color: #eee;
+   
+    
+}
+.new_userstartbtn{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color:#0d0e13;
+    width:200px;
+    color:white;
+   
+
+
+
+}
+.newuser_cont_allowed{
+    margin-top: 50px;
+    display: flex;
+
+  
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.user_info_workspace{
+   
+    background-color: white;
+    width:80%;
+    height: 300px;
+    margin: auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+
+}
+.user_plan{
+    border-radius: 15px;
+    background-color: rgb(146, 230, 146);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 65px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+text-align: center;
+    height: 20px;
+
+}
+.user_plan>p{
+    font-weight: bold;
+}
+.user_workspace_name{
+    background-color: white;
+    width:250px;
+    height: 100px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+
+
+}
+.user_workspace_users{
+    width:250px;
+    background-color: white;
+    height: 100px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+
+}
+.workspace_members,.user_workspace_name,.user_workspace_users,.user_workspace_plan{
+    background-color: white;
+    width:250px;
+    height: 100px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.user_account{
+    border-radius: 5px;
+    background-color: rgb(32, 5, 129);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 65px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+text-align: center;
+    height: 23px;
+    cursor: pointer;
+    color: #eee;
+  
+}
+.user_account:hover {
+    color:white;
+    background: rgb(9, 8, 10);
+  }
+  .user_account:active {
+    letter-spacing: 2px;
+    letter-spacing: 2px ;
+  }
+  .user_account:after {
+    background: rgb(228, 138, 138);
+  }
+
+
+.Jisti_app{
+    position: absolute;
+    bottom: 40px;
+    left:40px;
+    cursor:move;
+ 
+    height: 500px;
+    width: 450px;
+
+
+
+}
+.membersbtn{
+    position:absolute;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:black;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+    cursor: pointer;
+	box-shadow: 2px 2px 3px #999;
+
+}
+.add_outlined{
+    margin-top: 12px;
+}
+.user_info_notifications_header>p{
+    font-weight: bold;
+    margin-left: 5px;
+    
+
+}
+.user_members{
+    border-radius: 15px;
+    background-color: rgb(14, 9, 22);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 65px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+text-align: center;
+    height: 20px;
+    color: #eee;
+
+}
+.user_info_notifications_header{
+    margin-bottom: auto;
+    height: 40px;
+    overflow: hidden;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #eee;
+}
+.newuser_dash{
+    width: 90%;
+
+    background-color: white;
+ 
+    border-radius: 5px;
+    margin: auto;
+    height: 70%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:top;
+
+}
+@media screen and (max-width:768px){
+    .newuser_cont{
+        height: 50%;
+     
+
+    }.text-user-dash{
+        font-size: 16px!important;
+    }
+    .newuser_cont{
+        
+        margin-top: 2px;
+    }
+
+}
+.newuser_dash>p{
+    color:black;
+    font-size:20px;
+}
+.btn{
+    border:none;
+    padding:10px;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+.inputBox{
+    padding:10px;
+    border:none;
+  
+    border-radius:5px;
+    outline:none;
+    margin-bottom:14px;
+    background:#eee;
+    font-size:16px;
+    font-weight:bold;
+}
+.newuser_img{
+    width:150px;
+    height:150px;
+
+
+}
+.notification_head{
+    height: 100%;
+    width: 70px;
+}

@@ -12,6 +12,7 @@ import Menuicon from "../Menuicon"
 export default function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loader,setLoader] = useState(false);
   
     const dispatch = useDispatch();
 
@@ -36,6 +37,8 @@ export default function Login(){
 
 return(
     <div>
+ 
+   
                  <div className="talk-nav">
                 <li className="temp-list">
                 <ul><img className="talk-icon"src="/icon-dev.png"/></ul> 
@@ -50,16 +53,22 @@ return(
                     
                 </li>
          </div>
+                     {loader==true?<div className="login-image-cont">
+    <img src="/dev-icon.gif"/></div>:
+    <>
     <div className="login-container">
+    
            
     <Grid className="login-cont">
+ 
        
     
         <Grid className="main-icons" align="center">
             <img className="main-icon"src="/icon-dev.png"/>  
-            <h2>Talk Python</h2>
+            <h2>Eins Board</h2>
        
         </Grid>
+  
         <div className="customBtn" onClick={signInWithGoogle}>
       <span className="icon"></span>
       <span className="buttonText">Continue with Google</span>
@@ -68,7 +77,14 @@ return(
         <TextField style={ggStyle} label="Email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Enter email" fullWidth required/>
         <TextField style={ggStyle} label="Password" onChange={(e) => setPassword(e.target.value)} value={password} placeholder="Enter Password" type="password" fullWidth required/>
 
-        <Button style={btnStyle}  onClick={() => logInWithEmailAndPassword(email, password)} type="sumbit" variant="contained" color="primary" fullWidth>Sign in</Button>
+        <Button style={btnStyle}  onClick={() => {
+              setLoader(!loader)
+              setTimeout(()=>{
+                  setLoader(loader=>!loader)},1500);
+           logInWithEmailAndPassword(email, password)
+             setLoader(!loader)
+           
+        }} type="sumbit" variant="contained" color="primary" fullWidth>Sign in</Button>
       
 
 
@@ -80,12 +96,16 @@ return(
         <Typography> Don't have an acount ?
             <Link to="/sign-up">Sign up</Link>
         </Typography>
-      
+
         
     </Grid>
+
     <img alt="login-img" className="bg-image"src="/assets/rename.jpg" />
   
 </div>
+      </>
+}
+
 </div>
 
 )

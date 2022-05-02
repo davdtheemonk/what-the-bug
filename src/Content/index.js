@@ -27,10 +27,11 @@ import { selectUser } from '../features/userSlice'
 import Assessments from "../Assessments"
 import Community from "../Community"
 import Topics from "../Topics"
-import Playground from "../Playground"
+//import Playground from "../Playground"
 import Notepad from "../Notepad"
+import Newuser from "../Newuser"
 import Sidebar from "../Sidebar"
-export default function Content(){
+export default function Content(props){
     const [value, setValue] = React.useState(0);
     const [communities,setCommunity] = React.useState([]);
     const user = useSelector(selectUser);
@@ -40,6 +41,7 @@ export default function Content(){
     const [communitypage,setCommunityPage] = React.useState(false)
     const [topicspage,setTopicsPage] = React.useState(false)
     const [playgroundpage,setPlaygroundPage] = React.useState(false);
+     const [newuser,setNewuserpage] = React.useState(true);
     
 
     
@@ -62,6 +64,8 @@ export default function Content(){
    })
    const handleAssessmentPage=()=>{
      setAssesmentPage(true);
+     
+
      if(playgroundpage){
 setPlaygroundPage(false);
      }else if(notepadpage){
@@ -74,10 +78,15 @@ setPlaygroundPage(false);
      else if(topicspage){
       setTopicsPage(false)
      }
+     else if(newuser){
+       setNewuserpage(false);
+
+     }
 
    }
    const handleCommunityPage=()=>{
     setCommunityPage(true);
+    setNewuserpage(false);
     if(playgroundpage){
 setPlaygroundPage(false);
     }else if(notepadpage){
@@ -88,6 +97,10 @@ setPlaygroundPage(false);
 
     }   else if(topicspage){
       setTopicsPage(false)
+     }
+          else if(newuser){
+       setNewuserpage(false);
+
      }
 
    }
@@ -103,6 +116,10 @@ setCommunityPage(false);
 
     }   else if(topicspage){
       setTopicsPage(false)
+     }
+          else if(newuser){
+       setNewuserpage(false);
+
      }
 
    }
@@ -123,6 +140,10 @@ setCommunityPage(false);
      else if(assessmentpage){
       setAssesmentPage(false)
      }
+          else if(newuser){
+       setNewuserpage(false);
+
+     }
    }
    const handleTopicsPage=()=>{
     setTopicsPage(true);
@@ -136,6 +157,10 @@ setPlaygroundPage(false);
 
     }   else if(communitypage){
       setCommunityPage(false)
+     }
+          else if(newuser){
+       setNewuserpage(false);
+
      }
 
    }
@@ -151,12 +176,15 @@ setPlaygroundPage(false);
       }
      
     }
+  
+    //<Playground visible={playgroundpage}/>
     return(
         <div className="content">
              <ContentHeader />
+             <Newuser workspaceurl={props.workspaceId}visible={newuser}/>
+
              <Assessments visible={assessmentpage}/>
              <Community visible={communitypage}/>
-             <Playground visible={playgroundpage}/>
              <Notepad visible={notepadpage}/>
              <Topics visible={topicspage}/>
 

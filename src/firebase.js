@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {GoogleAuthProvider,getAuth,signInWithPopup,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendPasswordResetEmail,signOut} from "firebase/auth"
 import {getFirestore,query,getDocs,collection,where,addDoc} from "firebase/firestore"
-
+import toast from "react-hot-toast"
 const firebaseConfig = {
 
     apiKey: "AIzaSyCr2bLeqHXIeyBeGJPliZ528R3e81qAXko",
@@ -28,36 +28,66 @@ const provider = new GoogleAuthProvider();
 
   const signInWithGoogle = async () => {
     try {
-      const res = await signInWithPopup(auth, provider);
-      const user = res.user;
+      await signInWithPopup(auth, provider).then(async(res)=>{
+          const user = res.user;
       const q = query(collection(db, "users"), where("uid", "==", user.uid));
       const docs = await getDocs(q);
-      if (docs.docs.length === 0) {
+       if (docs.docs.length === 0) {
         await addDoc(collection(db, "users"), {
           uid: user.uid,
           name: user.displayName,
           authProvider: "google",
           email: user.email,
         });
+          toast.success(`Welcome ${user.displayName}`)
+            if(user){
+        window.location="/portal"
       }
-      //remember to change this on production
+      }
+      
+
+      }).catch((err)=>{
+        toast.error(`An Error Occured`)
+        
+      });
+    
+     
+    
+    
    
     } catch (err) {
       console.error(err);
-      alert(err.message);
+       toast.error(`An Error Occured`)
     }
   };
   const logInWithEmailAndPassword = async (email, password) => {
     try {
-     await signInWithEmailAndPassword(auth, email, password);
+     const res = await signInWithEmailAndPassword(auth, email, password);
+     const user = res.user
     //remember to change this on production
+      toast.success("Login Successful")
+            if(user){
+        window.location="/portal"
+      }
+    } catch (error) {
+          var errorCode = error.code;
+      var errorMessage = error.message;
 
-    } catch (err) {
-      console.error(err);
-      alert(err.message);
+        if (errorCode === 'auth/user-not-found') {
+          toast.error("No user is associated with details")
+        } else if (errorCode === 'auth/wrong-password') {
+           toast.error("Wrong user-email or password")
+        }else if (errorCode === 'auth/invalid-email') {
+           toast.error("Invalid Email")
+        }
+
+
+   
+      
     }
     
   };
+ 
   const registerWithEmailAndPassword = async (name, email, password) => {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -68,11 +98,18 @@ const provider = new GoogleAuthProvider();
         authProvider: "local",
         email,
       });
-      //remember to change this on production
-
+      toast.success(`Account Successfuly Created`)
+  
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      const  errCode = err.code
+      if(errCode=="auth/email-already-in-use"){
+        
+        toast.error("Email already in use")
+      }
+  else{
+      toast.error("An Error Occcured")
+  }
+     
     }
   };
   const sendPasswordReset = async (email) => {

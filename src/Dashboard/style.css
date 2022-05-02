@@ -1,6 +1,7 @@
 .dash_container{
     background-color: white;
     display: flex;
+    overflow: hidden;
 }
 
 

@@ -8,10 +8,11 @@ import {useAuthState} from "react-firebase-hooks/auth"
 import {useNavigate} from "react-router-dom" 
 import {useDispatch,useSelector} from "react-redux" 
 import {selectUser,login,logout} from "../features/userSlice"
-
+import {useParams} from "react-router-dom"
 export default function Dashboard(){
     const dispatch = useDispatch()
     const user = useSelector(selectUser)
+    const {id} =useParams()
  /*
     {user?<div className="dash_container">
         
@@ -43,17 +44,16 @@ export default function Dashboard(){
 
     return(
         <>
- 
+
     {user?<div className="dash_container">
         
     <Sidebar/>
-    <Content/>
+    <Content workspaceId={id}/>
     
 
 
 
 </div>:<Login/>}
 </>
-
 )
 }

@@ -17,7 +17,7 @@ export default function Hiremore(){
         <div className="hiremore_course_cont">
         <h4>Course Development</h4>
         <p className="hiremore_desc">Workspace</p>
-        <p className="hiremore_desc_p1">.. is focused to provide an interactive and collaborative workspace for students.We do this by providing an interactive,end-to-end solution to manage a whole course study.</p>
+        <p className="hiremore_desc_p1">The Eins Board is focused to provide an interactive and collaborative workspace for students.We do this by providing an interactive,end-to-end solution to manage a whole course study.</p>
     
           
 <Flexible/>

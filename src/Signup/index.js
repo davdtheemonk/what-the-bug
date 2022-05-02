@@ -12,6 +12,8 @@ export default function Signup(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setUsername] = useState("");
+    const [loader,setLoader] = useState(false);
+  
 
 
     const login ={
@@ -49,13 +51,16 @@ return(
                     
                 </li>
          </div>
+                           {loader==true?<div className="login-image-cont">
+    <img src="/dev-icon.gif"/></div>:
+    <>
          <div className="login-container">
     <Grid className="login-cont">
        
        
         <Grid className="main-icons" align="center">
             <img className="main-icon"src="/icon-dev.png"/>  
-            <h2>Talk Python</h2>
+            <h2>Eins</h2>
        
         </Grid>
         <div className="customBtn" onClick={signInWithGoogle}>
@@ -67,7 +72,15 @@ return(
         <TextField label="Email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Enter email" fullWidth required/>
         <TextField label="Password" onChange={(e) => setPassword(e.target.value)} value={password} placeholder="Enter Password" type="password" fullWidth required/>
 
-        <Button style={btnStyle}  onClick={() => registerWithEmailAndPassword(name,email, password)} type="sumbit" variant="contained" color="primary" fullWidth>Sign up</Button>
+        <Button style={btnStyle}  onClick={() => {
+              setLoader(!loader)
+              setTimeout(()=>{
+                  setLoader(loader=>!loader)},2600);
+                  registerWithEmailAndPassword(name,email, password) 
+                  setLoader(!loader)
+           
+        }} type="sumbit" variant="contained" color="primary" fullWidth>Sign up</Button>
+       
         <Typography style={login}> Have an account ?
             <Link to="/portal">Log in</Link>
         </Typography>
@@ -77,6 +90,8 @@ return(
     <img alt="login-img" className="bg-image"src="/assets/write.jpg" />
    
 </div>
+ </>
+}
 </div>
 
 )

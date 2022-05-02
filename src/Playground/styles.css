@@ -1,5 +1,42 @@
 .playground__cont_over{
-    display:flex;
-    flex:1;
+    display:grid;
+
+    grid-template-columns: 170px 1fr;
     height:100vh;
+    background-color:#0d0e13 ;
+
+}
+.CodeMirror{
+    min-width: calc(100vh);
+    font-size:15px;
+    line-height: 1.6;
+    padding-top: 20px;
+
+}
+.aside{
+    padding:16px;
+    color:#fff;
+    background:#0d0e13;
+    display:flex;
+    flex-direction:column;
+
+}
+.asideInner{
+    flex:1;
+
+}
+.clientList{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.client{
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+    font-weight: bold;
+}
+.userName{
+    margin-top: 10px;
 }
