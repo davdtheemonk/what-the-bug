@@ -121,7 +121,7 @@ export default function Sidebar(){
                
                 </div>
                 <Tooltip title="Provide FeedBack">
-                    <MessageOutlined onClick={auth.signOut()} className="sidebar_add"/>
+                    <MessageOutlined  className="sidebar_add"/>
                     </Tooltip>
                 <div className="sidebar_contentinfo">
                  <p></p>
