@@ -198,11 +198,13 @@ text-align: center;
     .newuser_cont{
         
         margin-top: 2px;
-    }
-     .workspace_members,.user_workspace_name,.user_workspace_users,.user_workspace_plan{
-    width:200px;
-height: 70px;
+    }.newuser_cont_allowed{
+     flex-direction:column;
+     align-items: center;
+     justify-content:center;
 }
+     
+
 
 }
 .newuser_dash>p{
