@@ -199,6 +199,10 @@ text-align: center;
         
         margin-top: 2px;
     }
+     .workspace_members,.user_workspace_name,.user_workspace_users,.user_workspace_plan{
+    width:200px;
+height: 70px;
+}
 
 }
 .newuser_dash>p{
