@@ -107,7 +107,8 @@ export default function Newuser(props){
       console.log(props.workspaceurl)
    
     return(
-        <div className="newuser_cont">
+     
+     <div className="newuser_cont">
                        {jwttoken!==""&&
     <Draggable bounds="parent">
           <div  className="Jisti_app" >
@@ -220,6 +221,9 @@ export default function Newuser(props){
 </>
 }
         </div>
+
+
       
     )
+    
 }

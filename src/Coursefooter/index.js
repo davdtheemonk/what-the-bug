@@ -16,9 +16,9 @@ export default function Coursefooter(){
                 </div></ul>
             <ul><Link to="/documentation" className="cours_footer_link">RESOURCES</Link>
             <div className="course_footer_contacts">
-                <ul><a href="">Blog</a></ul>
+                <ul><a href="https://what-the-bug.tk">Blog</a></ul>
                 <ul><a href="">Documenantion</a></ul>
-                <ul><a href="">Community</a></ul>
+                <ul><a href="https://what-the-bug.tk/community">Community</a></ul>
                 </div></ul>
             <ul><a href="" className="cours_footer_link">ABOUT</a>
             <div className="course_footer_contacts">

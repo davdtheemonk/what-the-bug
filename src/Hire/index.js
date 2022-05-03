@@ -1,13 +1,17 @@
 import React from "react"
 import "./styles.css"
+import Particles from "react-tsparticles"
 import Coursefooter from '../Coursefooter'
 import Hiremore from "../Hiremore"
 
 export default function Hire(){
+    
+        
     return(
         <div className="hire_over_cont">
+       
         <div className="hire-cont">
-            <div className="hire-cont-nav">
+                 <div className="hire-cont-nav">
             <div className="hire_header2">
            
          
@@ -39,7 +43,9 @@ export default function Hire(){
                 </div>
                 
                 <div className="hire_home_btns">
-                <button className="hire_home_startbtn">Get Started</button>
+                <button className="hire_home_startbtn" onClick={()=>{
+                    window.location="/portal"
+                }}>Get Started</button>
                 <button className="hire_home_demobtn">Request Demo</button>
                 </div>
          
@@ -47,10 +53,11 @@ export default function Hire(){
             </div>
   
             </div>
+    
             <Hiremore/>
             <Coursefooter/>
             
-            
+           
             </div>
      
     )

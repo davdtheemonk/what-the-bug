@@ -6,7 +6,10 @@ export default function Start(){
         <div className="start__cont_over">
 
             <div className="start_cont_btns">
-                <button className="start_cont_startbtn">Get Started</button>
+                <button 
+                onClick={()=>
+                window.location="/portal"}
+                className="start_cont_startbtn">Get Started</button>
             
                 </div>
 

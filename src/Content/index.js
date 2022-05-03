@@ -1,9 +1,10 @@
-import React from "react"
+import React,{useState} from "react"
 import "./style.css"
 import {db} from '../firebase'
 import ContentHeader from "../ContentHeader"
 import {useEffect} from "react"
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
@@ -32,7 +33,8 @@ import Notepad from "../Notepad"
 import Newuser from "../Newuser"
 import Sidebar from "../Sidebar"
 export default function Content(props){
-    const [value, setValue] = React.useState(0);
+  
+  const [value, setValue] = React.useState(0);
     const [communities,setCommunity] = React.useState([]);
     const user = useSelector(selectUser);
     const [input,setInput] = React.useState('')
@@ -43,7 +45,8 @@ export default function Content(props){
     const [playgroundpage,setPlaygroundPage] = React.useState(false);
      const [newuser,setNewuserpage] = React.useState(true);
     
-
+     const [loader,setLoader] = useState(false);
+  
     
 
     const communityId = useSelector(selectCommunityId);
@@ -54,8 +57,11 @@ export default function Content(props){
       display:"none",
     }
 
+  
+   
     useEffect(()=>{
-      /* db.collection('communities').onSnapshot(snapshot=>{
+   
+        /* db.collection('communities').onSnapshot(snapshot=>{
            setCommunity(snapshot.doc.map(doc=>({
                id:doc.id,
                community: doc.data()
@@ -180,6 +186,7 @@ setPlaygroundPage(false);
     //<Playground visible={playgroundpage}/>
     return(
         <div className="content">
+  
              <ContentHeader />
              <Newuser workspaceurl={props.workspaceId}visible={newuser}/>
 
@@ -192,8 +199,9 @@ setPlaygroundPage(false);
              
           
              
-             <Box className="bottom-nav" >
-            
+             
+             <Paper className="bottom-nav" sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+        
       <BottomNavigation
          
         showLabels
@@ -210,9 +218,10 @@ setPlaygroundPage(false);
         <BottomNavigationAction  onClick={handleCommunityPage} className="bottom-nav-icon" label="Community" icon={<ForumIcon />} />
         <BottomNavigationAction  onClick={handlePlaygroundPage} className="bottom-nav-icon" label="Playground" icon={<TerminalIcon />} />
       </BottomNavigation>
+
       
-    </Box>
-            
+    </Paper>
+
            
         </div>
     )

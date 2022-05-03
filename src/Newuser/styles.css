@@ -3,7 +3,8 @@
     flex-direction:column;
 
     height:calc(100vh-50px);
-    padding: 20px;
+    width: calc(100vh-100px);
+
     flex:1;
    overflow: hidden;
     background-color: #eee;
@@ -111,12 +112,10 @@ text-align: center;
 
 .Jisti_app{
     position: absolute;
-    bottom: 40px;
-    left:40px;
+  
     cursor:move;
  
-    height: 500px;
-    width: 450px;
+ 
 
 
 
@@ -184,6 +183,9 @@ text-align: center;
 
 }
 @media screen and (max-width:768px){
+    .membersbtn{
+        bottom:80px;
+    }
     .newuser_cont{
         height: 50%;
      
