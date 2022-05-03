@@ -200,12 +200,9 @@ text-align: center;
         margin-top: 2px;
     }
 .newuser_cont_allowed{
-     flex-direction:column;
-     
+     flex-direction: column 
+
 }
-     
-
-
 }
 .newuser_dash>p{
     color:black;
