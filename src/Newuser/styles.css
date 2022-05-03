@@ -3,7 +3,7 @@
     flex-direction:column;
 
     height:calc(100vh-50px);
-    width: calc(100vh-100px);
+    width: calc(100vw-100px);
 
     flex:1;
    overflow: hidden;
