@@ -41,7 +41,7 @@ const provider = new GoogleAuthProvider();
         });
           toast.success(`Welcome ${user.displayName}`)
             if(user){
-        window.location="/portal"
+        toast.error("App Not Ready 😪")
       }
       }
       
@@ -67,7 +67,7 @@ const provider = new GoogleAuthProvider();
     //remember to change this on production
       toast.success("Login Successful")
             if(user){
-        window.location="/portal"
+        toast.error("App Not Ready 😪")
       }
     } catch (error) {
           var errorCode = error.code;
