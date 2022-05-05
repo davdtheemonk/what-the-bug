@@ -82,7 +82,7 @@ return(
         }} type="sumbit" variant="contained" color="primary" fullWidth>Sign up</Button>
        
         <Typography style={login}> Have an account ?
-            <Link to="/portal">Log in</Link>
+            <Link to="/login">Log in</Link>
         </Typography>
        
         
