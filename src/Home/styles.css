@@ -5,6 +5,9 @@
     align-items: center;    
     
 }
+.home_cont_over{
+ overflow: hidden;
+}
 .cards{
     width: 200px;
     margin-left: 50px;
