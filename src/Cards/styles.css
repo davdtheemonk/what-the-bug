@@ -39,7 +39,7 @@
 }
 .container-cards{
     cursor: pointer;
-    width: 200px;
+    width: 160px;
     margin-left: 5px;
 
     margin-top: 80px;
@@ -49,7 +49,8 @@
     justify-content: center;
     padding: 20px;
     line-height: 25px;
-    margin: auto;
+    letter-spacing:3px;
+    
 
     
     
