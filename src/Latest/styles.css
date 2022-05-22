@@ -59,6 +59,8 @@ margin: auto;}
 .latest-stories{
     flex-direction:column;
 }
+.story-heading{
+  font-size:15px;
 }
 
 .descr{
