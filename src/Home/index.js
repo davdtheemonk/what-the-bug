@@ -262,29 +262,11 @@ React.useEffect(()=>{
             </li>
          
         </div>
-        <div className='featured-header'>
-        <div className='featured'>
-            <h3 className='featured-head'>Featured Stories</h3>
-            <hr className='hr'></hr>
-        </div>
-        </div>
-        <div className='body'>
-     
-       </div>
-       <div className="cards-cont"> 
-
-      { blog1==[] ?   <Box sx={{ overflow: 'hidden' }}>
-      <Media loading />
-  
-    </Box> : !minimumTimeElapsed || loader ? <Box sx={{ overflow: 'hidden' }}>
-      <Media loading />   </Box>  : <>   
-      {displayBlogs}    
-       </>}
-    </div>
-   
+        
+    <Latest posts={posts}/>
 
     <NewsLetter/>
-    <Latest posts={posts}/>
+   
     <Socials/>
    <Footer/>
        </div>
