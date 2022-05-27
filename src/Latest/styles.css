@@ -53,9 +53,8 @@
 
 
 
-    .container-latest{ flex-direction: row;
-    width: auto;
-    overflow-y:hidden;    
+    .container-latest{ flex-direction: column;
+    width: auto;   
 margin: auto;}
 .latest-stories{
     flex-direction:column;
