@@ -251,11 +251,6 @@ React.useEffect(()=>{
                 <ul><a href="https://github.com/davdtheemonk">PROJECTS</a></ul>
       
                 <ul><a href="https://www.upwork.com/freelancers/~014e87618220a92fdb" target="_blank">FREELANCING</a></ul>
-                <ul><Link
-              className="navbar-item"
-              to="/community">
-              TALK PYTHON
-            </Link></ul>
                 <ul className='line'>|</ul>
                 <ul className='career-data'>TECH BUGS YOU CAN'T CHEW </ul>
              
