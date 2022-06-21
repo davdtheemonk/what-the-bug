@@ -1,0 +1,10 @@
+.ad-bar{
+    display: flex;
+flex-direction: row;
+align-items:left;
+flex-wrap: nowrap;
+gap:20px;
+overflow-x: auto;
+justify-content: left;
+margin-left: 30px;
+}
