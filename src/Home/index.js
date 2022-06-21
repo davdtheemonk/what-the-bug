@@ -24,8 +24,8 @@ import Skeleton from '@mui/material/Skeleton';
 import axios from "axios";
 import {Link} from "react-router-dom"
 import {api} from "../unsplash"
+import LongAd from "../LongAd";
 import Socials from "../Socials"
-import Data from "../Data"
 
 const skele = [
   {
@@ -257,9 +257,9 @@ React.useEffect(()=>{
             </li>
          
         </div>
-        
+        <LongAd/>
     <Latest posts={posts}/>
-
+<LongAd/>
     <NewsLetter/>
    
     <Socials/>
