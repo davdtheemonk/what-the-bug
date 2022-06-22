@@ -1,12 +1,9 @@
 .ad-bar{
     display: flex;
-    width:100%;
+    width:780px;
     height:auto;
-flex-direction: row;
-align-items:left;
+align-items:center;
 flex-wrap: nowrap;
-gap:20px;
-overflow-x: auto;
-justify-content: left;
-margin-left: 30px;
+justify-content:center;
+
 }
