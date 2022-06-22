@@ -1,7 +1,9 @@
 .ad-bar{
     display: flex;
-    width:780px;
-    height:auto;
+    min-width:780px;
+    max-width:100%;
+    max-height:auto;
+    min-height:100px;
 align-items:center;
 flex-wrap: nowrap;
 justify-content:center;
