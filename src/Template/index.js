@@ -127,13 +127,18 @@ export default function Template(){
           </Typography>
           <Typography gutterBottom>
               <div className="auth-intro">
-            Hello!! <b>Am David,am a Computer Science student</b>.I write about coding and everything tech.Check out the learning resources on <b>TALK PYTHON</b> on <b><i>introductory python</i></b> and <b><i>python for data science</i></b>
-            </div>
+            <b>David Mugalla</b>
+</div>
+          </Typography>
+  <Typography gutterBottom>
+
+            <p className="auth-role">Software Engineer / Data Scientist / CS student</p>
+            
           </Typography>
           <Typography gutterBottom>
               <div className="auth-intro2">
    
-                  <a target="_blank" href="mugalladave@gmail.com">Drop me an Email<EmailSharpIcon></EmailSharpIcon></a>
+                  <a target="_blank" href="mailto:mugalladave@gmail.com">Drop me an Email<EmailSharpIcon></EmailSharpIcon></a>
          
          </div>
           </Typography>
