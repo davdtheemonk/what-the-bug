@@ -225,7 +225,7 @@ React.useEffect(()=>{
           </Typography>
              <Typography gutterBottom>
               <div className="auth-intro">
-            Hello!! <b>Am David,am a Fullstack dev..See what am building</b>.To publish your article email me mugalladave@gmail.com or register for a web token.
+            Hello!! <b>Am David,am a Fullstack dev.I write here.See what am building next</b>
             </div>
           </Typography>
         </DialogContent>
