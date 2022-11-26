@@ -1,11 +1,11 @@
 .latest-stories{
     display: flex;
     flex-direction: row;
-    align-items:left;
+    align-items: center;
     flex-wrap: nowrap;
     gap:20px;
     overflow-x: auto;
-    justify-content: left;
+    justify-content: center;
     margin-left: 30px;
  
    
