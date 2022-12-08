@@ -257,9 +257,9 @@ React.useEffect(()=>{
             </li>
          
         </div>
-        <LongAd/>
+       
     <Latest posts={posts}/>
-<LongAd/>
+
     <NewsLetter/>
    
     <Socials/>
