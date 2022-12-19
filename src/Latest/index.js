@@ -27,7 +27,7 @@ export default function Latest(props){
 
                 <img className="story-pc" src="/donut.svg">
                 </img>
-                <h3 className="story-heading">Posting more content soon</h3>
+                <h3 className="story-heading">Posting content soon ❤️</h3>
           
                 </div>
  
