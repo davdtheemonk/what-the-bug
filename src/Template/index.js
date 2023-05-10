@@ -89,7 +89,13 @@ export default function Template() {
   };
 
   axios
-    .get(`http://localhost:8000/posts/${id}`)
+    .get(`https://probablyx.pythonanywhere.com/posts/${id}`, {
+      headers: {
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+      },
+    })
     .then((res) => {
       setDate(res.data.date);
       setTitle(res.data.title);

@@ -156,14 +156,20 @@ export default function Home() {
   });
 
   const handleClick = () => {
-    const url = `/blogs/${blog1.pk}`;
+    const url = `/blogs/${blog1.title}`;
     window.location = url;
   };
 
   React.useEffect(() => {
     async function getBlogs() {
       await axios
-        .get(`https://probablyx.pythonanywhere.com/posts`)
+        .get(`https://probablyx.pythonanywhere.com/posts`, {
+          headers: {
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+          },
+        })
         .then((res) => {
           //(res.data[-1])
           setPosts(res.data);
