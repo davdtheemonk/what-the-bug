@@ -89,7 +89,7 @@ export default function Template() {
   const handleClose = () => {
     setOpen(false);
   };
-  console.log(id.replace(/-/g, " "));
+
   const getData = async () => {
     await axios
       .get(
@@ -254,6 +254,7 @@ export default function Template() {
               }}
             ></LinkedInIcon>
             <GitHubIcon
+              style={{ cursor: "pointer" }}
               onClick={() => {
                 const url = "https://www.github.com/davdtheemonk/";
                 window.open(url, "_blank");
