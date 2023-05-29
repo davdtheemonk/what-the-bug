@@ -83,9 +83,14 @@ export default function Cards(props) {
     });
 
   const handleClick = () => {
-    const url = `/blogs/${props.blog.title}`;
+    const url = `/blogs/${props.blog.title
+      .replace(/"/g, "")
+      .replace(/\s+/g, "-")}`;
     window.location = url;
   };
+  console.log(
+    props.blog.post.substring(1, 105).replace(/<[^>]+>|["']/g, ``) + `...`
+  );
 
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
@@ -113,7 +118,7 @@ export default function Cards(props) {
                   __html:
                     props.blog.post
                       .substring(1, 105)
-                      .replace(/^"(.+(?="$))"$/, "$1") + "...",
+                      .replace(/<[^>]+>|["']/g, ``) + `...`,
                 }}
                 className="descr"
               ></p>

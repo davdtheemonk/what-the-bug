@@ -1,6 +1,6 @@
 .nav{
-    height: 500px;
-    background: rgb(207, 228, 228);
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     padding: 20px;
     align-items: center;    
     
@@ -60,7 +60,7 @@ ul{
     margin: 0;
 }
 .hr{
-    width: 90%;
+    width: 100%;
     border: 0;
     height: 1px;
     background: #000;
@@ -72,9 +72,7 @@ a{
     font-weight: 500;
 
 }
-a:hover{
-    color: rgb(200, 120, 120);
-}
+
 .twitter{
     margin-right: 20px;
 }
@@ -133,10 +131,10 @@ a:hover{
     margin-right: 20px;
     border-radius: 10px;
     opacity: 9;
-    background-color:  rgb(207, 228, 228);
-    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-    border-style: none;
+    background-color: white;
+   border-style: none;
     border-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     height: 40px;
     width: 130px;
     cursor:pointer;

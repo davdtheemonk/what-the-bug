@@ -1,6 +1,5 @@
 import "./styles.css";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
+
 import * as React from "react";
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
@@ -26,6 +25,7 @@ import { Link } from "react-router-dom";
 import { api } from "../unsplash";
 import LongAd from "../LongAd";
 import Socials from "../Socials";
+import { GitHub } from "@mui/icons-material";
 
 const skele = [
   {
@@ -163,13 +163,7 @@ export default function Home() {
   React.useEffect(() => {
     async function getBlogs() {
       await axios
-        .get(`https://probablyx.pythonanywhere.com/posts`, {
-          headers: {
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
-          },
-        })
+        .get("https://probablyx.pythonanywhere.com/posts/")
         .then((res) => {
           //(res.data[-1])
           setPosts(res.data);
@@ -218,7 +212,7 @@ export default function Home() {
           id="customized-dialog-title"
           onClose={handleClose}
         >
-          Get Started
+          About me
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
@@ -228,11 +222,9 @@ export default function Home() {
           </Typography>
           <Typography gutterBottom>
             <div className="auth-intro">
-              Hello!!{" "}
-              <b>
-                Am David,am a Fullstack dev.I write here.See what am building
-                next
-              </b>
+              Hello!! Am David,am a Fullstack developer with experience in
+              building Software using React.JS,Vue.JS,React Native,Django and
+              Flask next
             </div>
           </Typography>
         </DialogContent>
@@ -240,38 +232,15 @@ export default function Home() {
       <div className="nav">
         <li className="list-zero">
           <img className="main-icon" src="/icon-dev.png" />
-
           <ul>
-            <a href="https://www.linkedin.com/in/david-mugalla-198149215/">
-              <LinkedInIcon></LinkedInIcon>
+            <a href="https://www.github.com/davdtheemonk">
+              <GitHub />
             </a>
-          </ul>
-          <ul className="twitter">
-            <TwitterIcon></TwitterIcon>
           </ul>
 
           <button className="start-btn" onClick={handleClickOpen}>
-            Get Started
+            About me
           </button>
-        </li>
-        <div className="home-image">
-          <img className="home-img" src="/pic3.gif"></img>
-        </div>
-        <li className="list-one">
-          <ul>
-            <a href="https://github.com/davdtheemonk">PROJECTS</a>
-          </ul>
-
-          <ul>
-            <a
-              href="https://www.upwork.com/freelancers/~014e87618220a92fdb"
-              target="_blank"
-            >
-              FREELANCING
-            </a>
-          </ul>
-          <ul className="line">|</ul>
-          <ul className="career-data">TECH BUGS YOU CAN'T CHEW </ul>
         </li>
       </div>
 

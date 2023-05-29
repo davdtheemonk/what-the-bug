@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GrainIcon from "@mui/icons-material/Grain";
 import EmailSharpIcon from "@mui/icons-material/EmailSharp";
 import "./style.css";
@@ -31,6 +31,7 @@ import {
 import LinkedIn from "@mui/icons-material/LinkedIn";
 import Footer from "../Footer";
 import { api } from "../unsplash";
+import Loader from "../Loader";
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
@@ -71,6 +72,7 @@ BootstrapDialogTitle.propTypes = {
 
 export default function Template() {
   const [title, setTitle] = useState("");
+  const [loader, setLoader] = useState(true);
   const [post, setPost] = useState("");
   const [timetoread, setTimeToRead] = useState("");
   const [date, setDate] = useState("");
@@ -87,28 +89,28 @@ export default function Template() {
   const handleClose = () => {
     setOpen(false);
   };
-
-  axios
-    .get(`https://probablyx.pythonanywhere.com/posts/${id}`, {
-      headers: {
-        "Access-Control-Allow-Headers": "*",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "*",
-      },
-    })
-    .then((res) => {
-      setDate(res.data.date);
-      setTitle(res.data.title);
-      setTimeToRead(res.data.timetoread);
-      setPost(res.data.post);
-      setLocation(res.data.location);
-      setImage(res.data.image);
-      console.log(post);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
+  console.log(id.replace(/-/g, " "));
+  const getData = async () => {
+    await axios
+      .get(
+        `https://probablyx.pythonanywhere.com/posts/?search=${id.replace(
+          /-/g,
+          " "
+        )}`
+      )
+      .then((res) => {
+        setDate(res.data[0].date);
+        setTitle(res.data[0].title);
+        setTimeToRead(res.data[0].timetoread);
+        setPost(res.data[0].post);
+        setLocation(res.data[0].location);
+        setImage(res.data[0].image);
+        setLoader(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   api.photos
     .get({ photoId: `${image.replaceAll('"', "")}` })
     .then((result) => {
@@ -117,6 +119,9 @@ export default function Template() {
     .catch((err) => {
       console.log("something went wrong!");
     });
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div className="Template-container">
@@ -158,12 +163,22 @@ export default function Template() {
       </BootstrapDialog>
       <div className="temp-nav">
         <li className="temp-list">
-          <ul>
-            <img className="temp-icon" src="/icon-dev.png" />
+          <ul
+            onClick={() => {
+              window.location = "/";
+            }}
+          >
+            <img
+              className="temp-icon"
+              style={{ cursor: "pointer" }}
+              src="/icon-dev.png"
+            />
           </ul>
 
           <ul>
-            <p className="temp-where">what the bug</p>
+            <p className="temp-where" style={{ cursor: "pointer" }}>
+              what the bug
+            </p>
           </ul>
           <ul className="search">
             <input
@@ -194,29 +209,33 @@ export default function Template() {
           Get Started
         </button>
       </div>
-      <div className="published">
-        <div className="published-text">
-          <h1>{title.replaceAll('"', "")}</h1>
-          <div className="temp-share">
-            <LocationOn fontSize="small"></LocationOn>
-            <p className="temp-loc">{location.replaceAll('"', "")}</p>
-          </div>
+      {loader && <Loader />}
 
-          <div className="published-story">
-            <img src={img} className="published-pic"></img>
-            <p
-              className="pub-story"
-              dangerouslySetInnerHTML={{
-                __html: post.replace(/^"(.+(?="$))"$/, "$1"),
-              }}
-            ></p>
+      <div className="published">
+        {!loader && (
+          <div className="published-text">
+            <h1>{title.replaceAll('"', "")}</h1>
             <div className="temp-share">
-              <p>Share..</p>
-              <Twitter></Twitter>
-              <FacebookOutlined></FacebookOutlined>
+              <LocationOn fontSize="small"></LocationOn>
+              <p className="temp-loc">{location.replaceAll('"', "")}</p>
+            </div>
+
+            <div className="published-story">
+              <img src={img} className="published-pic"></img>
+              <p
+                className="pub-story"
+                dangerouslySetInnerHTML={{
+                  __html: post.replace(/^"(.*)"$/, "$1"),
+                }}
+              ></p>
+              <div className="temp-share">
+                <p>Share..</p>
+                <Twitter></Twitter>
+                <FacebookOutlined></FacebookOutlined>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <div className="publisher-about">
           <img className="profile-pic-pub-about" src="/assets/avatar.jpg"></img>
 
